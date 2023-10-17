@@ -13,7 +13,8 @@ public class apiController {
     private static final Logger LOGGER = LoggerFactory.getLogger(apiController.class);
 
     @PostMapping(value = "/save", produces = "application/json")
-    public void logRequest(@RequestBody String requestBody) {
+    public String logRequest(@RequestBody String requestBody) {
         LOGGER.info("Received API Request Body: {}", requestBody);
+        return "Message from the API: " + requestBody;
     }
 }
